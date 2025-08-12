@@ -1,8 +1,8 @@
 import useAuthStore from "../stores/authStore";
 import axiosInstance from "./axiosInstance";
 
-const CLIENT_ID = "e210ddaae15949f69e4d4ad054b3c607";
-const CLIENT_SECRET = "8c643f9e01d54bf3aa8fa720033a1d49";
+const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 
 export async function getAccessToken() {
   const { accessToken, expiresAt, setAuth } = useAuthStore.getState();
